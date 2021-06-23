@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GroseryStoreModel">
+  <ClassDiagramComponents>
+    <Class name="AlcoholicDrinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1819.0" yPosition="101.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Appetizers" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1865.0" yPosition="1337.0">
+      <Fields>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Bill" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="322.0" yPosition="143.0">
+      <Fields>
+        <Field name="value" type="float" visibility="package"/>
+        <Field name="taxes" type="float" visibility="package"/>
+        <Field name="amountofproducts" type="int" visibility="package"/>
+        <Field name="totaltopay" type="float" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="emmit" returnType="void" visibility="public">
+          <Argument type="float" name="totaltopay"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cereals" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="925.0" yPosition="20.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Confectionery" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="327.0" yPosition="1337.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DairyAndEggs" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1237.0" yPosition="1389.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="volume" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getVolume" returnType="float" visibility="public"/>
+        <Method name="setVolume" returnType="void" visibility="public">
+          <Argument type="float" name="volume"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Drinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2168.0" yPosition="644.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="volume" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getVolume" returnType="float" visibility="public"/>
+        <Method name="setVolume" returnType="void" visibility="public">
+          <Argument type="float" name="volume"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FishAndSeafood" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="11.0" yPosition="1073.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Frozen" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2168.0" yPosition="268.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FruitsAndVegetables" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="645.0" yPosition="1446.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jams" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1539.0" yPosition="1378.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Meats" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1226.0" yPosition="31.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NutsandSeeds" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2212.0" yPosition="1093.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Oils" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="607.0" yPosition="20.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pasta" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1517.0" yPosition="29.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Sales" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="11.0" yPosition="143.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+        <Field name="volume" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="getVolume" returnType="float" visibility="public"/>
+        <Method name="setVolume" returnType="void" visibility="public">
+          <Argument type="float" name="volume"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Sauces" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="42.0" yPosition="617.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Seasoning" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="946.0" yPosition="1366.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ShoppingCart" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="688.0" yPosition="548.0">
+      <Fields>
+        <Field name="numberofproducts" type="int" visibility="public"/>
+        <Field name="price" type="float" visibility="public"/>
+        <Field name="give" type="ArrayList&lt;Bill&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="pasta" returnType="Pasta" visibility="public"/>
+        <Method name="appetizers" returnType="Appetizers" visibility="public"/>
+        <Method name="drinks" returnType="Drinks" visibility="public"/>
+        <Method name="meats" returnType="Meats" visibility="public"/>
+        <Method name="nutandseeds" returnType="NutsandSeeds" visibility="public"/>
+        <Method name="oils" returnType="Oils" visibility="public"/>
+        <Method name="sales" returnType="Sales" visibility="public"/>
+        <Method name="cereals" returnType="Cereals" visibility="public"/>
+        <Method name="frozen" returnType="Frozen" visibility="public"/>
+        <Method name="jams" returnType="Jams" visibility="public"/>
+        <Method name="dairyAndEggs" returnType="DairyAndEggs" visibility="public"/>
+        <Method name="seasoning" returnType="Seasoning" visibility="public"/>
+        <Method name="fruitsAndVegetables" returnType="FruitsAndVegetables" visibility="public"/>
+        <Method name="confectionery" returnType="Confectionery" visibility="public"/>
+        <Method name="fishAndSeafood" returnType="FishAndSeafood" visibility="public"/>
+        <Method name="sauces" returnType="Sauces" visibility="public"/>
+        <Method name="alcoholicDrinkss" returnType="AlcoholicDrinks" visibility="public"/>
+        <Method name="add" returnType="void" visibility="private"/>
+        <Method name="remove" returnType="void" visibility="private"/>
+        <Method name="count" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Jams" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Jams" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Appetizers" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FishAndSeafood" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Frozen" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.NutsandSeeds" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Meats" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sales" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Confectionery" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Drinks" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Frozen" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Seasoning" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Seasoning" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Pasta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="give" source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Bill" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bill&gt;"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.AlcoholicDrinks" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Confectionery" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Pasta" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Cereals" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Oils" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Cereals" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Drinks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Appetizers" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sales" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sauces" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sauces" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Meats" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Oils" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.NutsandSeeds" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.FishAndSeafood" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
