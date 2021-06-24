@@ -1,24 +1,4 @@
-id,Price,Type,Brand,Amount of products in stock
-01 3.25 Soda Fanta 35
-C:\Users\pc\OneDrive\Escritorio\The Programers\GroseryStoreModel1212311113,5,6,7
+id,Price,Type,Brand
+01,3.25,Soda,Fanta
 
-3.00,MR POLLO,Meats,**
-
-02,1.40,Vegetables,Azucena
-
-03,
-3334,
-w,
-e3
-id,Price,Type,Brand,Amount of products in stock
-01,3.25,Soda,Fanta,35
-
-04 , 88 , 9 , h
-
-03 , 333e , rrr , tttt
-
-04 , 966u5 , 97876 , thyrj
-
-03 , 2 , 4 , 2
-
-04 , 3.00 , 2sewf , wde
+246 , 9.50 , Soda , Pepsi
