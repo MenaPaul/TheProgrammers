@@ -2,7 +2,24 @@
 
 <ClassDiagram name="GroseryStoreModel">
   <ClassDiagramComponents>
-    <Class name="AlcoholicDrinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1819.0" yPosition="101.0">
+    <Class name="SystemDisplay" package="ec.edu.espe.GroceryStoreModel.view" visibility="public" xPosition="28.0" yPosition="371.0">
+      <Fields>
+        <Field name="totalline" type="int" visibility="package" isStatic="true"/>
+        <Field name="totalcoincidences" type="int" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="UseInventory" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="Searchword" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="InventoryFile"/>
+          <Argument type="String" name="word"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlcoholicDrinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2006.0" yPosition="182.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -31,7 +48,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Appetizers" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1865.0" yPosition="1337.0">
+    <Class name="Appetizers" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1939.0" yPosition="1439.0">
       <Fields>
         <Field name="type" type="String" visibility="private"/>
         <Field name="brand" type="String" visibility="private"/>
@@ -65,7 +82,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Bill" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="322.0" yPosition="143.0">
+    <Class name="Bill" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="457.0" yPosition="571.0">
       <Fields>
         <Field name="value" type="float" visibility="package"/>
         <Field name="taxes" type="float" visibility="package"/>
@@ -79,7 +96,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Cereals" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="925.0" yPosition="20.0">
+    <Class name="Cereals" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1020.0" yPosition="183.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="brand" type="String" visibility="private"/>
@@ -108,7 +125,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Confectionery" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="327.0" yPosition="1337.0">
+    <Class name="Confectionery" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="407.0" yPosition="1728.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -137,7 +154,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="DairyAndEggs" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1237.0" yPosition="1389.0">
+    <Class name="DairyAndEggs" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1313.0" yPosition="1468.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -176,17 +193,50 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Drinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2168.0" yPosition="644.0">
+    <Class name="Drinks" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1869.0" yPosition="749.0">
       <Fields>
-        <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
         <Field name="brand" type="String" visibility="private"/>
         <Field name="volume" type="float" visibility="private"/>
-        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="amountofproducts" type="int" visibility="private"/>
         <Field name="price" type="float" visibility="private"/>
+        <Field name="add" type="ShopCart" visibility="private"/>
       </Fields>
-      <Constructors/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="float" name="parseFloat"/>
+          <Argument type="float" name="parseFloat0"/>
+          <Argument type="String" name="color"/>
+          <Argument type="float" name="parseFloat1"/>
+          <Argument type="String" name="model"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Drinks" name="brand"/>
+          <Argument type="Drinks" name="type"/>
+          <Argument type="Drinks" name="price"/>
+          <Argument type="Drinks" name="volume"/>
+          <Argument type="Drinks" name="amountofproducts"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="float" name="parseFloat"/>
+          <Argument type="String" name="color"/>
+          <Argument type="float" name="parseFloat0"/>
+          <Argument type="String" name="model"/>
+          <Argument type="float" name="parseFloat1"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="type"/>
+          <Argument type="String" name="brand"/>
+          <Argument type="float" name="volume"/>
+          <Argument type="int" name="amountofproducts"/>
+          <Argument type="float" name="price"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
       <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
         <Method name="getType" returnType="String" visibility="public"/>
         <Method name="setType" returnType="void" visibility="public">
           <Argument type="String" name="type"/>
@@ -199,18 +249,25 @@
         <Method name="setVolume" returnType="void" visibility="public">
           <Argument type="float" name="volume"/>
         </Method>
-        <Method name="getAmountproducts" returnType="int" visibility="public"/>
-        <Method name="setAmountproducts" returnType="void" visibility="public">
-          <Argument type="int" name="amountproducts"/>
-        </Method>
         <Method name="getPrice" returnType="float" visibility="public"/>
         <Method name="setPrice" returnType="void" visibility="public">
           <Argument type="float" name="price"/>
         </Method>
         <Method name="buy" returnType="void" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Drinks" name="drinks2"/>
+        </Method>
+        <Method name="getAmountofproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountofproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountofproducts"/>
+        </Method>
+        <Method name="getAdd" returnType="ShopCart" visibility="public"/>
+        <Method name="setAdd" returnType="void" visibility="public">
+          <Argument type="ShopCart" name="add"/>
+        </Method>
       </Methods>
     </Class>
-    <Class name="FishAndSeafood" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="11.0" yPosition="1073.0">
+    <Class name="FishAndSeafood" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="50.0" yPosition="1699.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -244,7 +301,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Frozen" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2168.0" yPosition="268.0">
+    <Class name="Frozen" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2383.0" yPosition="343.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -273,41 +330,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="FruitsAndVegetables" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="645.0" yPosition="1446.0">
-      <Fields>
-        <Field name="add" type="ShoppingCart" visibility="package"/>
-        <Field name="type" type="String" visibility="private"/>
-        <Field name="brand" type="String" visibility="private"/>
-        <Field name="amountproducts" type="int" visibility="private"/>
-        <Field name="price" type="float" visibility="private"/>
-        <Field name="weight" type="float" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="getType" returnType="String" visibility="public"/>
-        <Method name="setType" returnType="void" visibility="public">
-          <Argument type="String" name="type"/>
-        </Method>
-        <Method name="getBrand" returnType="String" visibility="public"/>
-        <Method name="setBrand" returnType="void" visibility="public">
-          <Argument type="String" name="brand"/>
-        </Method>
-        <Method name="getAmountproducts" returnType="int" visibility="public"/>
-        <Method name="setAmountproducts" returnType="void" visibility="public">
-          <Argument type="int" name="amountproducts"/>
-        </Method>
-        <Method name="getPrice" returnType="float" visibility="public"/>
-        <Method name="setPrice" returnType="void" visibility="public">
-          <Argument type="float" name="price"/>
-        </Method>
-        <Method name="getWeight" returnType="float" visibility="public"/>
-        <Method name="setWeight" returnType="void" visibility="public">
-          <Argument type="float" name="weight"/>
-        </Method>
-        <Method name="buy" returnType="void" visibility="public"/>
-      </Methods>
-    </Class>
-    <Class name="Jams" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1539.0" yPosition="1378.0">
+    <Class name="FruitsAndVegetables" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="714.0" yPosition="1699.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -341,7 +364,108 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Meats" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1226.0" yPosition="31.0">
+    <Class name="Inventory" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="38.0" yPosition="774.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="price" type="String" visibility="private"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="price"/>
+          <Argument type="String" name="type"/>
+          <Argument type="String" name="brand"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="int" name="parseInt"/>
+          <Argument type="float" name="parseFloat"/>
+          <Argument type="int" name="parseUnsignedInt"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="int" name="parseInt"/>
+          <Argument type="float" name="parseFloat"/>
+          <Argument type="int" name="parseUnsignedInt"/>
+          <Argument type="int" name="parseUnsignedInt0"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="String" name="string"/>
+          <Argument type="String" name="string0"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="Inventory" name="id"/>
+          <Argument type="Inventory" name="price"/>
+          <Argument type="Inventory" name="type"/>
+          <Argument type="Inventory" name="brand"/>
+          <Argument type="Inventory" name="amountofproductsinstock"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="int" name="id"/>
+          <Argument type="float" name="price"/>
+          <Argument type="String" name="type"/>
+          <Argument type="String" name="brand"/>
+          <Argument type="int" name="amountofproductsinstock"/>
+        </Constructor>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getPrice" returnType="String" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="String" name="price"/>
+        </Method>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="package">
+          <Argument type="Inventory" name="inventories"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Jams" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1622.0" yPosition="1602.0">
+      <Fields>
+        <Field name="add" type="ShoppingCart" visibility="package"/>
+        <Field name="type" type="String" visibility="private"/>
+        <Field name="brand" type="String" visibility="private"/>
+        <Field name="amountproducts" type="int" visibility="private"/>
+        <Field name="price" type="float" visibility="private"/>
+        <Field name="weight" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getBrand" returnType="String" visibility="public"/>
+        <Method name="setBrand" returnType="void" visibility="public">
+          <Argument type="String" name="brand"/>
+        </Method>
+        <Method name="getAmountproducts" returnType="int" visibility="public"/>
+        <Method name="setAmountproducts" returnType="void" visibility="public">
+          <Argument type="int" name="amountproducts"/>
+        </Method>
+        <Method name="getPrice" returnType="float" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="float" name="price"/>
+        </Method>
+        <Method name="getWeight" returnType="float" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="float" name="weight"/>
+        </Method>
+        <Method name="buy" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Meats" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1313.0" yPosition="50.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="brand" type="String" visibility="private"/>
@@ -370,7 +494,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="NutsandSeeds" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2212.0" yPosition="1093.0">
+    <Class name="NutsandSeeds" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="2286.0" yPosition="1370.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -404,7 +528,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Oils" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="607.0" yPosition="20.0">
+    <Class name="Oils" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="725.0" yPosition="164.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="brand" type="String" visibility="private"/>
@@ -433,7 +557,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Pasta" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1517.0" yPosition="29.0">
+    <Class name="Pasta" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1676.0" yPosition="96.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -467,7 +591,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Sales" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="11.0" yPosition="143.0">
+    <Class name="Sales" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="390.0" yPosition="68.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -506,7 +630,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Sauces" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="42.0" yPosition="617.0">
+    <Class name="Sauces" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="17.0" yPosition="1270.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -540,7 +664,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Seasoning" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="946.0" yPosition="1366.0">
+    <Class name="Seasoning" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1020.0" yPosition="1676.0">
       <Fields>
         <Field name="add" type="ShoppingCart" visibility="package"/>
         <Field name="type" type="String" visibility="private"/>
@@ -569,7 +693,7 @@
         <Method name="buy" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ShoppingCart" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="688.0" yPosition="548.0">
+    <Class name="ShoppingCart" package="ec.edu.espe.groseryStoreModel.model" visibility="public" xPosition="1089.0" yPosition="808.0">
       <Fields>
         <Field name="numberofproducts" type="int" visibility="public"/>
         <Field name="price" type="float" visibility="public"/>
@@ -601,39 +725,41 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Jams" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Jams" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Appetizers" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FishAndSeafood" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Frozen" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.NutsandSeeds" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Meats" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sales" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Confectionery" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Drinks" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Frozen" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Seasoning" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.GroceryStoreModel.view.SystemDisplay" target="ec.edu.espe.groseryStoreModel.model.Inventory" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Seasoning" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Pasta" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="give" source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Bill" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bill&gt;"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.AlcoholicDrinks" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Confectionery" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Pasta" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Cereals" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Oils" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Cereals" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Drinks" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Appetizers" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sales" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sauces" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sauces" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Meats" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Oils" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Confectionery" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sales" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Appetizers" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.NutsandSeeds" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sauces" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Jams" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Pasta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.Drinks" target="ec.edu.espe.groseryStoreModel.model.Drinks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.NutsandSeeds" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Jams" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.Inventory" target="ec.edu.espe.groseryStoreModel.model.Inventory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Drinks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Frozen" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Appetizers" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Meats" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Cereals" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Oils" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Sales" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.FruitsAndVegetables" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.FishAndSeafood" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.AlcoholicDrinks" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Confectionery" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Sauces" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.Pasta" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="add" source="ec.edu.espe.groseryStoreModel.model.FishAndSeafood" target="ec.edu.espe.groseryStoreModel.model.ShoppingCart" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Cereals" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.DairyAndEggs" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Oils" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="give" source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Bill" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bill&gt;"/>
+    <UseRelation source="ec.edu.espe.groseryStoreModel.model.ShoppingCart" target="ec.edu.espe.groseryStoreModel.model.Seasoning" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
