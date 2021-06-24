@@ -1,5 +1,2 @@
-
-id,Price,Type,Brand
-01,3.25,Soda,Fanta
 id,Price,Type,Brand
 01,3.25,Drinks,Fanta

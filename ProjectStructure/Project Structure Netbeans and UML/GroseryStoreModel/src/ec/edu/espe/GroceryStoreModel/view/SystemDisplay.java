@@ -5,9 +5,9 @@
  */
 package ec.edu.espe.GroceryStoreModel.view;
 
+import ec.edu.espe.groseryStoreModel.model.Inventory;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
-import com.google.gson.Gson;
 import ec.edu.espe.groseryStoreModel.model.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -76,7 +76,7 @@ public class SystemDisplay {
             }
         }
         List<Inventory> inventory = new ArrayList<Inventory>();
-        inventory.add(new Inventory(" 01 " , " 3.25 " , " Drinks " , " Fanta "));
+        inventory.add(new Inventory("01", "3.25", "Soda", "Fanta"));
 
         ExportCSV(inventory);
 
@@ -125,23 +125,22 @@ public class SystemDisplay {
         System.out.println("PRESS 3: to read the list of products");
         int option = sc.nextInt();
         if (option == 1) {
-           Write();
+           WriteCsv();
         }
         if (option == 2) {
-            search();
+            searchCSV();
         }
         if (option == 3) {
-            read();
+            readCSV();
         }
         if(option==4){
         }
     }
 
-    public static void read() throws FileNotFoundException, IOException {
+    public static void readCSV() throws FileNotFoundException, IOException {
         try {
             ArrayList<Inventory> inventory = new ArrayList<Inventory>();
-            System.out.println("read data from CSV");
-            CsvReader readInventory = new CsvReader("C:\\\\Users\\\\pc\\\\OneDrive\\\\Escritorio\\\\The Programers\\\\GroseryStoreModel\\\\Inventory.txt");
+            CsvReader readInventory = new CsvReader("Inventory.txt");
             readInventory.readHeaders();
             while (readInventory.readRecord()) {
                 String id = readInventory.get(0);
@@ -168,8 +167,8 @@ public class SystemDisplay {
     static int totalline;
     static int totalcoincidences;
 
-    public static void search() {
-        File InventoryFile = new File("C:\\Users\\pc\\OneDrive\\Escritorio\\The Programers\\GroseryStoreModel\\Inventory.txt");
+    public static void searchCSV() {
+        File InventoryFile = new File("Inventory.txt");
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter the id");
         String word = keyboard.nextLine();
@@ -201,7 +200,7 @@ public class SystemDisplay {
             System.out.println(e.getMessage());
         }
     }
-    public static void Write(){
+    public static void WriteCsv (){
  try 
           {    
                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

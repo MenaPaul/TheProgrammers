@@ -9,14 +9,52 @@ package ec.edu.espe.groseryStoreModel.model;
  *
  * @author Paul Mena The Programmers ESPE-DCCO
  */
-class Drinks {
+
+public class Drinks {
+   private String type;
+   private String brand;
+   private float volume;
+   private int amountofproducts;
+   private float price;
+
+    public Drinks(String id, float parseFloat, float parseFloat0, String color, float parseFloat1, String model) {
+       //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Drinks(Drinks brand, Drinks type, Drinks price, Drinks volume, Drinks amountofproducts) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Drinks(String id, float parseFloat, String color, float parseFloat0, String model, float parseFloat1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+     @Override
+    public String toString() {
+        return "Drinks{" + "type=" + getType() + ", brand=" + getBrand() + ", volume=" + getVolume() + ", amountperunit=" + getAmountofproducts() + ", price=" + getPrice() + '}';
+    }
+
+    public Drinks(String type, String brand, float volume ,int amountofproducts ,float price ) {
+        this.type = type;
+        this.brand = brand;
+        this.volume = volume;
+        this.amountofproducts = amountofproducts;
+        this.price = price;
+    }
+    
+    public Drinks() {
+        this.type = "no type";
+        this.brand = "no brand";
+        this.volume=0;
+        this.amountofproducts=0;
+        this.price=0;
+    }
     /**
      * @return the type
      */
     public String getType() {
         return type;
     }
-ShoppingCart add;
+private ShoppingCart add;
     /**
      * @param type the type to set
      */
@@ -53,18 +91,9 @@ ShoppingCart add;
     }
 
     /**
-     * @return the amountproducts
+     * @return the amountperunit
      */
-    public int getAmountproducts() {
-        return amountproducts;
-    }
-
-    /**
-     * @param amountproducts the amountproducts to set
-     */
-    public void setAmountproducts(int amountproducts) {
-        this.amountproducts = amountproducts;
-    }   
+  
 
     /**
      * @return the price
@@ -79,13 +108,39 @@ ShoppingCart add;
     public void setPrice(float price) {
         this.price = price;
     }
-    private String type;
-    private String brand;
-    private float volume;
-    private int amountproducts;
-    private float price;
-    
-    
-    public void buy()
-    {}
+
+ public void buy()
+   {}
+
+    public void add(Drinks drinks2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the amountofproducts
+     */
+    public int getAmountofproducts() {
+        return amountofproducts;
+    }
+
+    /**
+     * @param amountofproducts the amountofproducts to set
+     */
+    public void setAmountofproducts(int amountofproducts) {
+        this.amountofproducts = amountofproducts;
+    }
+
+    /**
+     * @return the add
+     */
+    public ShoppingCart getAdd() {
+        return add;
+    }
+
+    /**
+     * @param add the add to set
+     */
+    public void setAdd(ShoppingCart add) {
+        this.add = add;
+    }
 }
