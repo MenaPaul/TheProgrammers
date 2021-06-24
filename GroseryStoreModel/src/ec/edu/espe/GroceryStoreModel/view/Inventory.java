@@ -14,15 +14,14 @@ public class Inventory {
   private String price;
   private String type;
   private String brand;
-  private String amountofproductsinstock;
+
   
   
-    public Inventory(String id, String price,String type ,String brand ,String amountofproductsinstock) {
+    public Inventory(String id, String price,String type ,String brand) {
         this.id=id;
         this.price=price;
         this.type = type;
         this.brand=brand;
-        this.amountofproductsinstock=amountofproductsinstock;
         
        
     }
@@ -52,6 +51,8 @@ public class Inventory {
     Inventory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 
     /**
      * @return the id
@@ -112,16 +113,7 @@ public class Inventory {
     /**
      * @return the amountofproductsinstock
      */
-    public String getAmountofproductsinstock() {
-        return amountofproductsinstock;
-    }
-
-    /**
-     * @param amountofproductsinstock the amountofproductsinstock to set
-     */
-    public void setAmountofproductsinstock(String amountofproductsinstock) {
-        this.amountofproductsinstock = amountofproductsinstock;
-    }
+   
 
     void add(Inventory inventories) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

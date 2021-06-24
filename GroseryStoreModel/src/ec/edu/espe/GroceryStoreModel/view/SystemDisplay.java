@@ -10,12 +10,14 @@ import com.csvreader.CsvWriter;
 import com.google.gson.Gson;
 import ec.edu.espe.groseryStoreModel.model.*;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -74,14 +76,14 @@ public class SystemDisplay {
             }
         }
         List<Inventory> inventory = new ArrayList<Inventory>();
-        inventory.add(new Inventory("01", "3.25", "Soda", "Fanta", "35"));
+        inventory.add(new Inventory(" 01 " , " 3.25 " , " Drinks " , " Fanta "));
 
         ExportCSV(inventory);
 
     }
 
     public static void ExportCSV(List<Inventory> inventory) {
-        String fileOutput = "Inventory.csv";
+        String fileOutput = "Inventory.txt";
         boolean exists = new File(fileOutput).exists();
 
         if (exists) {
@@ -95,7 +97,6 @@ public class SystemDisplay {
             outputCSV.write("Price");
             outputCSV.write("Type");
             outputCSV.write("Brand");
-            outputCSV.write("Amount of products in stock");
 
             outputCSV.endRecord();
 
@@ -104,7 +105,6 @@ public class SystemDisplay {
                 outputCSV.write(inventories.getPrice());
                 outputCSV.write(inventories.getType());
                 outputCSV.write(inventories.getBrand());
-                outputCSV.write(inventories.getAmountofproductsinstock());
                 outputCSV.endRecord(); //Stop writting the file
 
             }
@@ -125,30 +125,31 @@ public class SystemDisplay {
         System.out.println("PRESS 3: to read the list of products");
         int option = sc.nextInt();
         if (option == 1) {
-           WriteCsv();
+           Write();
         }
         if (option == 2) {
-            searchCSV();
+            search();
         }
         if (option == 3) {
-            readCSV();
+            read();
+        }
+        if(option==4){
         }
     }
 
-    public static void readCSV() throws FileNotFoundException, IOException {
+    public static void read() throws FileNotFoundException, IOException {
         try {
             ArrayList<Inventory> inventory = new ArrayList<Inventory>();
             System.out.println("read data from CSV");
-            CsvReader readInventory = new CsvReader("Inventory.csv");
+            CsvReader readInventory = new CsvReader("C:\\\\Users\\\\pc\\\\OneDrive\\\\Escritorio\\\\The Programers\\\\GroseryStoreModel\\\\Inventory.txt");
             readInventory.readHeaders();
             while (readInventory.readRecord()) {
                 String id = readInventory.get(0);
                 String price = readInventory.get(1);
                 String type = readInventory.get(2);
                 String brand = readInventory.get(3);
-                String amountofproductsinstock = readInventory.get(4);
 
-                inventory.add(new Inventory(id, price, type, brand, amountofproductsinstock));
+                inventory.add(new Inventory(id, price, type, brand));
             }
             readInventory.close();
 
@@ -167,67 +168,67 @@ public class SystemDisplay {
     static int totalline;
     static int totalcoincidences;
 
-    public static void searchCSV() {
-        File archivo = new File("C:\\Users\\pc\\OneDrive\\Escritorio\\The Programers\\GroseryStoreModel\\Inventory.csv");
+    public static void search() {
+        File InventoryFile = new File("C:\\Users\\pc\\OneDrive\\Escritorio\\The Programers\\GroseryStoreModel\\Inventory.txt");
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter the id");
         String word = keyboard.nextLine();
         System.out.println("");
-        Searchword(archivo, word);
+        Searchword(InventoryFile, word);
     }
 
-    public static void Searchword(File archivo, String word) {
+    public static void Searchword(File InventoryFile , String word) {
         try {
-            if (archivo.exists()) {
-                BufferedReader readArchivo = new BufferedReader(new FileReader(archivo));
+            if (InventoryFile.exists()) {
+                BufferedReader readInventory = new BufferedReader(new FileReader(InventoryFile));
 
                 String readedline;
 
-                while ((readedline = readArchivo.readLine()) != null) {
+                while ((readedline = readInventory.readLine()) != null) {
                     totalline = totalline + 1;
 
                     String[] words = readedline.split(" ");
                     for (int i = 0; i < words.length; i++) {
-                        if (words[i].equals(words)) {
+                        if (words[i].equals(word)) {
                             System.out.println(readedline);
-                            System.out.println("In the line:" + totalline + "we have not found that word" + totalcoincidences);
                             System.out.println("");
                         }
 
                     }
                 }
             }
-            System.out.println("At the end was found this word" + word + "," + totalcoincidences + "times in this file");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    public static void WriteCsv (){
+    public static void Write(){
  try 
           {    
                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                FileWriter fw=new FileWriter("Inventory.csv", true); 
-                 System.out.println("Write the price");
+                FileWriter fw=new FileWriter("Inventory.txt", true); 
+                 System.out.println("Enter Id");
                 String id = br.readLine();
-                System.out.println("Write the brand");
+                System.out.println("Enter price");
                 String price = br.readLine();
-                System.out.println("Write the type");
+                System.out.println("Enter type");
                 String type = br.readLine();
-                System.out.println("Write the volume");
+                System.out.println("Enter brand");
                  String brand = br.readLine();
+                fw.write(System.getProperty( "line.separator" ));
                 fw.write( id );
-                fw.write( "," );
+                fw.write( " , " );
                 fw.write(price);
-                fw.write( "," );
+                fw.write( " , " );
                 fw.write(type);
-                fw.write(",");
+                fw.write(" , ");
                 fw.write(brand);
+                fw.write(System.getProperty( "line.separator" ));
                 fw.close();    
           }
           catch(Exception e){System.out.println(e);}    
           System.out.println("Success...");    
-    }    
-
+    }  
+   
 }
 
 
