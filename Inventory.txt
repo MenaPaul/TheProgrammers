@@ -1,2 +1,0 @@
-id,Price,Type,Brand
-01,3.25,Drinks,Fanta
