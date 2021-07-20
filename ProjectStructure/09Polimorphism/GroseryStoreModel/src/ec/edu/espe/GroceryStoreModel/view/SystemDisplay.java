@@ -39,6 +39,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.util.Scanner;
+import utils.Functions;
 
 /**
  *
@@ -50,6 +51,7 @@ public class SystemDisplay {
 
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
+        float price;
         int opcion; //Guardaremos la opcion del usuario
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
@@ -72,7 +74,11 @@ public class SystemDisplay {
                         break;
 
                     case 2:
-                        System.out.println("");
+                System.out.println("Enter the price");
+                price = sn.nextInt();       
+        float total;
+        total= Functions.computeIva(price);
+        System.out.println("total "+total);
 
                         break;
                     case 3:
