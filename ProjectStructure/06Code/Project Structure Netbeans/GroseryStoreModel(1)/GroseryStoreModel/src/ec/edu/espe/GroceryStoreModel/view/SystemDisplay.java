@@ -8,19 +8,36 @@ package ec.edu.espe.GroceryStoreModel.view;
  
 
 
-
+import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import ec.edu.espe.groseryStoreModel.model.*;
 
 import static ec.edu.espe.untils.Functions.Export;
 import static ec.edu.espe.untils.Functions.UseInventory;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.InputMismatchException;
-
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.Scanner;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import java.util.Scanner;
 import utils.Functions;
 
@@ -35,14 +52,6 @@ public class SystemDisplay {
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         float price;
-<<<<<<< HEAD
-        float seasonDiscount;
-=======
-<<<<<<< HEAD
-        float seasonDiscount;
-=======
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
->>>>>>> 61e75f751f044037f34df0412225ab598405843f
         int opcion; //Guardaremos la opcion del usuario
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
@@ -50,95 +59,39 @@ public class SystemDisplay {
         while (!exit) {
 
             System.out.println("PRESS 1:VIEW INVENTORY");
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 61e75f751f044037f34df0412225ab598405843f
-            System.out.println("PRESS 2:VIEW IVA");
-            System.out.println("PRESS 3: VIEW TOTAL PRICE");
-             System.out.println("PRESS 4: VIEW SEASON DISCOUNTS");
-              System.out.println("PRESS 5: VIEW TOTAL PRICE WITH SEASON DISCOUNTS");
-            System.out.println("PRESS 11: EXIT");
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 61e75f751f044037f34df0412225ab598405843f
             System.out.println("PRESS 2:SHOPPINGCART");
             System.out.println("PRESS 3: BYLLING SYSTEM");
             System.out.println("PRESS 4: EXIT");
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
-
 
             try {
 
-            System.out.println("Choose one option");
-            opcion = sn.nextInt();
+                System.out.println("Choose one option");
+                opcion = sn.nextInt();
 
                 switch (opcion) {
                     case 1:
                         checkInventory();
                         break;
+
                     case 2:
-<<<<<<< HEAD
-                        System.out.println("Enter the price");
-                        price = sn.nextInt();       
-                        float total;
-                        total= Functions.computeIva(price);
-                        System.out.println("total "+total);
-=======
                 System.out.println("Enter the price");
                 price = sn.nextInt();       
         float total;
         total= Functions.computeIva(price);
         System.out.println("total "+total);
-<<<<<<< HEAD
-=======
 
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
->>>>>>> 61e75f751f044037f34df0412225ab598405843f
                         break;
                     case 3:
                         System.out.println("Enter the price");
-                        price = sn.nextFloat();       
-<<<<<<< HEAD
-                        total= Functions.computeTotalprice(price);
-                        System.out.println("total "+total);
-=======
+                price = sn.nextInt();       
         total= Functions.computeTotalprice(price);
         System.out.println("total "+total);
->>>>>>> 61e75f751f044037f34df0412225ab598405843f
+
                         break;
                     case 4:
-                         System.out.println("Enter the price");
-                        price = sn.nextFloat();
-                         System.out.println("Enter the discount");
-                         seasonDiscount=sn.nextFloat();
-                         total= Functions.computeSeasonDiscount(price,seasonDiscount);
-                          System.out.println("total "+total);                         
-                        break;
-                    case 5:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();
-                        System.out.println("Enter the discount");
-                        seasonDiscount=sn.nextFloat();
-                        total= Functions.computeTotalPriceWithSeasonDiscount(price, seasonDiscount);
-                        System.out.println("total "+total);    
-                        break;
-                    case 6:
-                        
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
                         System.out.println("THANK YOU FOR USING OUR STORE, HAVE A NICE DAY!!");
                         exit = true;
-                        break;  
+                        break;
                     default:
                         System.out.println("you haven´t choosed any option, please try again");
                 }
