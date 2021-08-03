@@ -35,10 +35,7 @@ public class SystemDisplay {
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         float price;
-<<<<<<< HEAD
         float seasonDiscount;
-=======
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
         int opcion; //Guardaremos la opcion del usuario
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
@@ -46,52 +43,42 @@ public class SystemDisplay {
         while (!exit) {
 
             System.out.println("PRESS 1:VIEW INVENTORY");
-<<<<<<< HEAD
             System.out.println("PRESS 2:VIEW IVA");
             System.out.println("PRESS 3: VIEW TOTAL PRICE");
-             System.out.println("PRESS 4: VIEW SEASON DISCOUNTS");
-              System.out.println("PRESS 5: VIEW TOTAL PRICE WITH SEASON DISCOUNTS");
+            System.out.println("PRESS 4: VIEW SEASON DISCOUNTS");
+            System.out.println("PRESS 5: VIEW TOTAL PRICE WITH SEASON DISCOUNTS");
+             System.out.println("PRESS 6: VIEW TOTAL PRICE WITH STUFF DISCOUNTS");
             System.out.println("PRESS 11: EXIT");
-=======
-            System.out.println("PRESS 2:SHOPPINGCART");
-            System.out.println("PRESS 3: BYLLING SYSTEM");
-            System.out.println("PRESS 4: EXIT");
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
-
+            
             try {
 
-                System.out.println("Choose one option");
-                opcion = sn.nextInt();
+            System.out.println("Choose one option");
+            opcion = sn.nextInt();
 
                 switch (opcion) {
                     case 1:
                         checkInventory();
                         break;
-
                     case 2:
-                System.out.println("Enter the price");
-                price = sn.nextInt();       
-        float total;
-        total= Functions.computeIva(price);
-        System.out.println("total "+total);
-<<<<<<< HEAD
-=======
-
->>>>>>> d9cdcc19f63aaaff67cee7e7cf0ccd967ae96fc9
+                        System.out.println("Enter the price");
+                        price = sn.nextFloat();       
+                        float total;
+                        total= Functions.computeIva(price);
+                        System.out.println("total "+total);
                         break;
                     case 3:
                         System.out.println("Enter the price");
                         price = sn.nextFloat();       
-        total= Functions.computeTotalprice(price);
-        System.out.println("total "+total);
+                        total= Functions.computeTotalprice(price);
+                        System.out.println("total "+total);
                         break;
                     case 4:
-                         System.out.println("Enter the price");
+                        System.out.println("Enter the price");
                         price = sn.nextFloat();
-                         System.out.println("Enter the discount");
-                         seasonDiscount=sn.nextFloat();
-                         total= Functions.computeSeasonDiscount(price,seasonDiscount);
-                          System.out.println("total "+total);                         
+                        System.out.println("Enter the discount");
+                        seasonDiscount=sn.nextFloat();
+                        total= Functions.computeSeasonDiscount(price,seasonDiscount);                          
+                        System.out.println("total "+total);                         
                         break;
                     case 5:
                         System.out.println("Enter the price");
@@ -102,7 +89,10 @@ public class SystemDisplay {
                         System.out.println("total "+total);    
                         break;
                     case 6:
-                        
+                        System.out.println("Enter the price");
+                        price = sn.nextFloat();
+                        total= Functions.computeDiscountUsed(price);
+                        System.out.println("total employee discount "+total);
                         break;
                     case 7:
                         break;
