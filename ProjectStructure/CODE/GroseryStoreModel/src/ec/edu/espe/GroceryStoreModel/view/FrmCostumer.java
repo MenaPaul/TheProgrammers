@@ -130,6 +130,12 @@ public class FrmCostumer extends javax.swing.JFrame {
             }
         });
 
+        txtId.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIdFocusLost(evt);
+            }
+        });
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drinks", "", "Item 3", "Item 4" }));
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -323,6 +329,16 @@ public class FrmCostumer extends javax.swing.JFrame {
         txtAdress.requestFocus();
     }
     }//GEN-LAST:event_txtAdressFocusLost
+
+    private void txtIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIdFocusLost
+         String id = txtId.getText();
+    boolean isCharacter;
+    isCharacter = InputValidation.validateNumbers(id);
+    if(!(isCharacter)){
+        JOptionPane.showMessageDialog(rootPane, "Enter only numbers here");
+        txtId.requestFocus();
+    }
+    }//GEN-LAST:event_txtIdFocusLost
 
 
     /**
