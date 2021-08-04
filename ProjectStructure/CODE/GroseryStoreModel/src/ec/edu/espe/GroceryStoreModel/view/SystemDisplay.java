@@ -134,7 +134,7 @@ public class SystemDisplay {
 
                 switch (opcion) {
                     case 1:
-                        checkInventory();
+                      
                         break;
                     case 2:
                         System.out.println("Enter the price");
@@ -194,81 +194,7 @@ public class SystemDisplay {
         Export();
         
     }
-    public static void checkInventory(){
-        
-    Inventory inventory = new AlcoholicDrinks(0231, (float) 15.98, "Wine" , "Gato" );
-    ArrayList <Inventory> inventories= new ArrayList<>();
-     System.out.println("inventory "+inventory);
-    inventories.add(inventory);
-     
-    inventory = new AlcoholicDrinks(0233, (float) 15.98, "Beer" , "Pilsener");
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-     
-    inventory = new  Appetizers((float)2.2, 0235 , (float) 2.00, "Snacks" , "Rufles" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-  
-    System.out.println("inventory "+inventory);
-      inventory = new  Cereals((float)1.4, 0236 , (float) 3.00, "Cereal" , "Get Fit" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new  Confectionery(0237 , (float) 3.00, "Chocolate" , "Ferrero" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new  DairyAndEggs(0, (float) 1.5,0127, (float) 1.00, "Milk" , "Vita leche carton" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new  Drinks((float)3.00, 0244 , (float) 3.25, "Soda" , "Coca Cola" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-       inventory = new  Drinks((float)3.00, 0244 , (float) 3.25, "Soda" , "Coca Cola" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-    inventory = new  FishAndSeafood ((float)1.00, 0267, (float) 6.25, "Fish" , "Mr Fish Corvina" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-     
-     inventory = new  Frozen ((float)1.00, 0225, (float) 4.35, "Ice Cream" , "Pinguino" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-    inventory = new FruitsAndVegetables ((float)1.00, 0667, (float) 2.00, "Fruits" , "Platanos" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new Jams ((float)2.00, 0555, (float) 2.00, "Jams" , "Doña Abuela" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new Meats((float)4.00, 0275, (float) 4.44, "Meat" , "Mr Chancho" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-      inventory = new NutsandSeeds((float)5.00, 0266, (float) 4.44, "Nuts" , "nueces de don jose" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-      inventory = new Oils((float)2.00, 001, (float) 4.24, "Oils" , "Girasol" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-    inventory = new Pasta((float)3.00, 0045, (float) 2.44, "Pata" , "Don Vitorio" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-     inventory = new Sauces((float)1.00, 0216, (float) 1.00, "Sauces" , "La A Cena" );
-    inventories.add(inventory);
-    System.out.println("inventory "+inventory);
-    
-    System.out.println("inventory "+inventories);
- 
-    }
+
     
 }
     
