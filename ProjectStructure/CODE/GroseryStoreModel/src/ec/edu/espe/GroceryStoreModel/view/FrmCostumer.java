@@ -136,6 +136,17 @@ public class FrmCostumer extends javax.swing.JFrame {
             }
         });
 
+        txtDescription.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDescriptionFocusLost(evt);
+            }
+        });
+        txtDescription.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescriptionActionPerformed(evt);
+            }
+        });
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drinks", "", "Item 3", "Item 4" }));
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -339,6 +350,20 @@ public class FrmCostumer extends javax.swing.JFrame {
         txtId.requestFocus();
     }
     }//GEN-LAST:event_txtIdFocusLost
+
+    private void txtDescriptionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescriptionFocusLost
+             String description = txtDescription.getText();
+    boolean isCharacter;
+    isCharacter = InputValidation.validateCharacters(description);
+    if(!(isCharacter)){
+        JOptionPane.showMessageDialog(rootPane, "Enter only characters here");
+        txtDescription.requestFocus();
+    }
+    }//GEN-LAST:event_txtDescriptionFocusLost
+
+    private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescriptionActionPerformed
 
 
     /**
