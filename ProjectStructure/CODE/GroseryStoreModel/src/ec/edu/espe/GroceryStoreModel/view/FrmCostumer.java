@@ -298,7 +298,7 @@ public class FrmCostumer extends javax.swing.JFrame {
     isCharacter = InputValidation.validateCharacters(email);
     if(!(isCharacter)){
         JOptionPane.showMessageDialog(rootPane, "Enter only characters here");
-        txtName.requestFocus();
+        txtEmail.requestFocus();
         }
     }//GEN-LAST:event_txtEmailFocusLost
 
@@ -309,13 +309,19 @@ public class FrmCostumer extends javax.swing.JFrame {
     isCharacter = InputValidation.validateNumbers(phone);
     if(!(isCharacter)){
         JOptionPane.showMessageDialog(rootPane, "Enter only numbers here");
-        txtName.requestFocus();
+        txtPhone.requestFocus();
         }
          
     }//GEN-LAST:event_txtPhoneFocusLost
 
     private void txtAdressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAdressFocusLost
-        // TODO add your handling code here:
+      String adress = txtAdress.getText();
+    boolean isCharacter;
+    isCharacter = InputValidation.validateCharacters(adress);
+    if(!(isCharacter)){
+        JOptionPane.showMessageDialog(rootPane, "Enter only characters here");
+        txtAdress.requestFocus();
+    }
     }//GEN-LAST:event_txtAdressFocusLost
 
 
