@@ -20,30 +20,18 @@ public class Costumer {
    private String adress;
    private String id;
    private String description;
-   private ArrayList<Products> products= new ArrayList <>();
-   private Date buyDate;
-   private int productsAmount;
+   private ArrayList<Gender> genders = new ArrayList <>();
+   private Date birthDate;
 
-    
-
-    public Costumer(String name, String email, String phone, String adress, String id, String description, int productsAmount) {
+    public Costumer(String name, String email, String phone, String adress, String id, String description, Date birthDate) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.adress = adress;
         this.id = id;
         this.description = description;
-        this.productsAmount = productsAmount;
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.birthDate = birthDate;
     }
-
-    public Costumer(String name, String email, String phone, String adress, String id, String description, int productsAmount, LocalDateTime buyDate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-
-  
 
     /**
      * @return the name
@@ -130,44 +118,35 @@ public class Costumer {
     }
 
     /**
-     * @return the products
+     * @return the genders
      */
-    public ArrayList<Products> getProducts() {
-        return products;
+    public ArrayList<Gender> getGenders() {
+        return genders;
     }
 
     /**
-     * @param products the products to set
+     * @param genders the genders to set
      */
-    public void setProducts(ArrayList<Products> products) {
-        this.products = products;
+    public void setGenders(ArrayList<Gender> genders) {
+        this.genders = genders;
     }
 
     /**
-     * @return the buyDate
+     * @return the birthDate
      */
-    public Date getBuyDate() {
-        return buyDate;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
     /**
-     * @param buyDate the buyDate to set
+     * @param birthDate the birthDate to set
      */
-    public void setBuyDate(Date buyDate) {
-        this.buyDate = buyDate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
+   
+}
 
-    /**
-     * @return the productsAmount
-     */
-    public int getProductsAmount() {
-        return productsAmount;
-    }
+    
 
-    /**
-     * @param productsAmount the productsAmount to set
-     */
-    public void setProductsAmount(int productsAmount) {
-        this.productsAmount = productsAmount;
-    }
-} 
+  
