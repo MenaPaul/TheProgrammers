@@ -14,7 +14,7 @@ public class InputValidation {
         boolean isCharacter=true;
         for(int i=0;i<data.length();i++){
             char ch =data.charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <='Z')){
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <='Z' || ch==' ')){
                 isCharacter = false;
             }
         }
@@ -25,7 +25,7 @@ public class InputValidation {
         boolean isCharacter=true;
          for(int i=0;i<data.length();i++){
             char ch =data.charAt(i);
-            if (!(ch >= '0'&& ch<= 'a')){
+            if (!(ch >= '0'&& ch< 'a')){
                 isCharacter = false;
             
             }    
