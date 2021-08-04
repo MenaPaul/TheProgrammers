@@ -1,0 +1,4 @@
+id,Price,Type,Brand
+01,3.25,Soda,Fanta
+
+246 , 9.50 , Soda , Pepsi

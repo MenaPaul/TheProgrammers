@@ -1,0 +1,2 @@
+id,Price,Type,Brand,amount of products in stock
+
