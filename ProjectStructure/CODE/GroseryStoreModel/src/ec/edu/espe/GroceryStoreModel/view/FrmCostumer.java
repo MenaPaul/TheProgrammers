@@ -67,7 +67,7 @@ public class FrmCostumer extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         txtDescription = new javax.swing.JTextField();
         add = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Show = new javax.swing.JButton();
         jdcBirthDate = new com.toedter.calendar.JCalendar();
         cmbGender = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -141,10 +141,10 @@ public class FrmCostumer extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Show");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Show.setText("Show");
+        Show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ShowActionPerformed(evt);
             }
         });
 
@@ -199,7 +199,7 @@ public class FrmCostumer extends javax.swing.JFrame {
                         .addGap(195, 195, 195)
                         .addComponent(add)
                         .addGap(79, 79, 79)
-                        .addComponent(jButton3)
+                        .addComponent(Show)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -257,7 +257,7 @@ public class FrmCostumer extends javax.swing.JFrame {
                     .addComponent(BuyDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(Show)
                     .addComponent(add)
                     .addComponent(jButton1))
                 .addGap(51, 51, 51))
@@ -345,9 +345,11 @@ public class FrmCostumer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescriptionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
+         FrmCostumerData frmCostumerData = new FrmCostumerData();
+        frmCostumerData.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ShowActionPerformed
 
     private void cmbGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGenderActionPerformed
         // TODO add your handling code here:
@@ -395,10 +397,10 @@ public class FrmCostumer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BuyDate;
+    private javax.swing.JButton Show;
     private javax.swing.JButton add;
     private javax.swing.JComboBox<String> cmbGender;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
