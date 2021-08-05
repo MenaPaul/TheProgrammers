@@ -292,7 +292,7 @@ public class FrmCostumer extends javax.swing.JFrame {
     private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
           String email = txtEmail.getText();
     boolean isCharacter;
-    isCharacter = InputValidation.validateCharacters(email);
+    isCharacter = InputValidation.validateEmail(email);
     if(!(isCharacter)){
         JOptionPane.showMessageDialog(rootPane, "Enter only characters here");
         txtEmail.requestFocus();

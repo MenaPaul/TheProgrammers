@@ -32,4 +32,14 @@ public class InputValidation {
         }
         return isCharacter;
     }
+    public static boolean validateEmail(String data){
+    boolean isCharacter=true;
+   for(int i=0;i<data.length();i++){
+        char ch =data.charAt(i);
+        if (!(ch >= 1)){
+        isCharacter = false;
+        }
+    }
+    return isCharacter;
+    }
 }
