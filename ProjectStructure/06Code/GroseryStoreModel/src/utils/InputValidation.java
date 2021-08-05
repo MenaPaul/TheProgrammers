@@ -14,10 +14,32 @@ public class InputValidation {
         boolean isCharacter=true;
         for(int i=0;i<data.length();i++){
             char ch =data.charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <='Z')){
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <='Z' || ch==' ')){
                 isCharacter = false;
             }
         }
         return isCharacter;
+    }
+
+        public static boolean validateNumbers(String data){
+        boolean isCharacter=true;
+         for(int i=0;i<data.length();i++){
+            char ch =data.charAt(i);
+            if (!(ch >= '0'&& ch< 'a')){
+                isCharacter = false;
+            
+            }    
+        }
+        return isCharacter;
+    }
+    public static boolean validateEmail(String data){
+    boolean isCharacter=true;
+   for(int i=0;i<data.length();i++){
+        char ch =data.charAt(i);
+        if (!(ch >= 1)){
+        isCharacter = false;
+        }
+    }
+    return isCharacter;
     }
 }

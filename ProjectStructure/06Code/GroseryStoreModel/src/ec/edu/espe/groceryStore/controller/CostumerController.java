@@ -42,9 +42,6 @@ public class CostumerController {
    ArrayList<Costumer>costumers = new ArrayList<>();
    //TODO read contacts from database
    //TODO use the utils class
-   Costumer costumer = new Costumer("Carlos Sanchez", "carlosS@hotmail", "0986756754","Eloy Alfaro y Amazonas ", "1766789996", "",4);
-   costumers.add(costumer);
-   costumer = new Costumer("Carlos Sanchez", "carlosS@hotmail", "0986756754","Eloy Alfaro y Amazonas ", "1766789996", "",4);
    return costumers;
    }
    
