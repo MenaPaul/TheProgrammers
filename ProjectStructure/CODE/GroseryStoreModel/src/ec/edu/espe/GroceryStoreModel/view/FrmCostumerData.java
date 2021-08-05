@@ -5,16 +5,34 @@
  */
 package ec.edu.espe.GroceryStoreModel.view;
 
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.Mongo;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author pc
  */
 public class FrmCostumerData extends javax.swing.JFrame {
-
+    DB db;
+    DBCollection table;
+    DBCursor cursor = null;
     /**
      * Creates new form FrmCostumerData
      */
     public FrmCostumerData() {
+         try {
+            Mongo mongo = new Mongo("localhost",27017);
+            db=mongo.getDB("t");
+            table=db.getCollection("DataCostumer");
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(FrmCostumer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
     }
 
