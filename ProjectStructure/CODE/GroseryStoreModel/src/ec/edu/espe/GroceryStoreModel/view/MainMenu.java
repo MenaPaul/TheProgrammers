@@ -29,6 +29,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         Costumer = new javax.swing.JButton();
+        Inventory = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,16 +42,28 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Inventory.setText("Inventario");
+        Inventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InventoryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Costumer)
-                    .addComponent(jLabel1))
-                .addContainerGap(177, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Costumer)
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(Inventory)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -59,7 +72,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(36, 36, 36)
                 .addComponent(Costumer)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(Inventory)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -71,6 +86,11 @@ public class MainMenu extends javax.swing.JFrame {
         dispose();
                     // TODO add your handling code here:
     }//GEN-LAST:event_CostumerActionPerformed
+
+    private void InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventoryActionPerformed
+        FrmInventory frmInventory = new FrmInventory();
+        frmInventory.setVisible(true);
+    }//GEN-LAST:event_InventoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,6 +129,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Costumer;
+    private javax.swing.JButton Inventory;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
