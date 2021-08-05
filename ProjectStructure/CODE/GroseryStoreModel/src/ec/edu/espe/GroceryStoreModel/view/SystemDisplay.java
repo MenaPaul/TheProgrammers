@@ -48,53 +48,9 @@ public class SystemDisplay {
         int opcion; //Guardaremos la opcion del usuario
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
-        
-        
- 
-        
-            
-        
-          
- 
-            
-        while (!exit) {
-            
-            System.out.println("PRESS 1:VIEW INVENTORY");
-            System.out.println("PRESS 2:VIEW IVA");
-            System.out.println("PRESS 3: VIEW TOTAL PRICE");
-            System.out.println("PRESS 4: VIEW SEASON DISCOUNTS");
-            System.out.println("PRESS 5: VIEW TOTAL PRICE WITH SEASON DISCOUNTS");
-            System.out.println("PRESS 6: VIEW TOTAL PRICE WITH STUFF DISCOUNTS");
-            System.out.println("PRESS 11: EXIT"); 
-            
-            try {
-                
-            System.out.println("Choose one option");
-            opcion = sn.nextInt();
-
-                switch (opcion) {
-                    
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        System.out.println("THANK YOU FOR USING OUR STORE, HAVE A NICE DAY!!");
-                        exit = true;
-                        break;  
-                    default:
-                        System.out.println("you haven´t choosed any option, please try again");
-                }
-            } catch (InputMismatchException e) {
-                sn.next();
-            }
-        }
-
-        Export();
-        
     }
+            
+    
 
     
 }
