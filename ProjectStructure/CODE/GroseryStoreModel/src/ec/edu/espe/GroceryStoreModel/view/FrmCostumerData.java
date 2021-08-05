@@ -8,10 +8,12 @@ package ec.edu.espe.GroceryStoreModel.view;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -47,15 +49,15 @@ public class FrmCostumerData extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tbDataView = new javax.swing.JTable();
+        Show = new javax.swing.JButton();
         Return = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("DATOS DE LOS CLIENTES");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbDataView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -66,9 +68,14 @@ public class FrmCostumerData extends javax.swing.JFrame {
                 "Nombre ", "Email", "telefono", "adress", "id", "genero", "fecha de nacimiento"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbDataView);
 
-        jButton1.setText("Vizualizar");
+        Show.setText("Vizualizar");
+        Show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowActionPerformed(evt);
+            }
+        });
 
         Return.setText("Regresar");
         Return.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +90,7 @@ public class FrmCostumerData extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jButton1)
+                .addComponent(Show)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Return)
                 .addGap(79, 79, 79))
@@ -106,7 +113,7 @@ public class FrmCostumerData extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(Show)
                     .addComponent(Return))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
@@ -119,6 +126,28 @@ public class FrmCostumerData extends javax.swing.JFrame {
         frmCostumer.setVisible(true);
         dispose();
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
+       table=db.getCollection("CostumerData");
+       cursor = table.find();
+       
+       String[] columnNames = {"Nombre","Email","telefono","direccion","id","descripción", "genero", "fecha de nacimiento"};
+       DefaultTableModel model = new DefaultTableModel(columnNames,0);
+       
+       while(cursor.hasNext()){
+           DBObject obj = cursor.next();
+           String name = (String)obj.get("name");
+           String email= (String)obj.get("email");
+           String phone = (String)obj.get("phone");
+           String id = (String)obj.get("id");
+           String description = (String)obj.get("description");
+           String gender  = (String)obj.get("gender");
+           String birthDate =(String) obj.get("birthdate");
+           
+           model.addRow(new Object[] { name,email,phone,id,description,birthDate,gender });
+       }
+       tbDataView.setModel(model);
+    }//GEN-LAST:event_ShowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,9 +186,9 @@ public class FrmCostumerData extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Return;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Show;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbDataView;
     // End of variables declaration//GEN-END:variables
 }
