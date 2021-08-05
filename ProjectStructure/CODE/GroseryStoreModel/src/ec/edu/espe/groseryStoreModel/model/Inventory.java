@@ -17,21 +17,6 @@ public abstract class Inventory {
   private String type;
   private String brand;
   
-ArrayList<AlcoholicDrinks> alcoholicDrinks = new ArrayList<>();
-ArrayList<Appetizers> appetizers = new ArrayList<>();
-ArrayList<Cereals>cereals=new ArrayList<>();
-ArrayList<Confectionery>confectionery=new ArrayList<>();
-ArrayList<DairyAndEggs>dairyAndEggs = new ArrayList<>();
-ArrayList<Drinks>drinks=new ArrayList<>();
-ArrayList<FishAndSeafood> fishAndSeafood = new ArrayList<>();
-ArrayList<Frozen>frozen=new ArrayList<>();
-ArrayList<FruitsAndVegetables>FruitsAndVegetables=new ArrayList<>();
-ArrayList<Jams>jams = new ArrayList<>();
-ArrayList<Meats>meats=new ArrayList<>();
-ArrayList<NutsandSeeds>nutsandSeeds=new ArrayList<>();
-ArrayList<Oils>oils  = new ArrayList<>();
-ArrayList<Pasta>pasta=new ArrayList<>();
-ArrayList<Sauces>sauces=new ArrayList<>();
 
 
 
