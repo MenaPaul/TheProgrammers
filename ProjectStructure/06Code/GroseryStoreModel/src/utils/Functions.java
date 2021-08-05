@@ -14,14 +14,8 @@ import java.util.Scanner;
  */
 public class Functions {
      Scanner sn = new Scanner(System.in);
-<<<<<<< HEAD
     static float discountUsed=8.00F;
     static  float ivaPercentage= 12.00F;
-=======
-    
-    static  float ivaPercentage= 12.00F;
-    static float discountUsed = 8.00F;
->>>>>>> 34865643352d7a215915fc57a0a5309a87d24426
     
     public static float computeIva(float price){
     float ivaPrice;
@@ -45,11 +39,7 @@ public class Functions {
     float totalSeasonPrice;
     totalSeasonPrice=price-price*seasonDiscount/100;
     return totalSeasonPrice;
-<<<<<<< HEAD
      } 
-=======
-     }  
->>>>>>> 34865643352d7a215915fc57a0a5309a87d24426
     
     public static float computeDiscountUsed(float price){
         float totalDiscountUsed;
@@ -58,11 +48,8 @@ public class Functions {
     }
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 34865643352d7a215915fc57a0a5309a87d24426
 }
        
 
