@@ -73,6 +73,7 @@ public class FrmCostumer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        Delete = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
 
@@ -167,6 +168,13 @@ public class FrmCostumer extends javax.swing.JFrame {
         jLabel8.setText("Cliente");
         jLabel8.setPreferredSize(new java.awt.Dimension(39, 19));
 
+        Delete.setText("Borrar");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,7 +182,7 @@ public class FrmCostumer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(46, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -198,20 +206,19 @@ public class FrmCostumer extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(195, 195, 195)
                         .addComponent(add)
-                        .addGap(79, 79, 79)
+                        .addGap(46, 46, 46)
                         .addComponent(Show)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BuyDate)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jdcBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(36, 36, 36)
+                        .addComponent(Delete)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BuyDate)
+                    .addComponent(jLabel7)
                     .addComponent(jButton1))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jdcBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(381, 381, 381)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +266,8 @@ public class FrmCostumer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Show)
                     .addComponent(add)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(Delete))
                 .addGap(51, 51, 51))
         );
 
@@ -359,6 +367,18 @@ public class FrmCostumer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+         BasicDBObject  document = new BasicDBObject();
+     document.put("name","'" + txtName.getText()+ "'");
+     document.put("email","'"+txtEmail.getText()+"'");
+     document.put("phoneNumber","'"+txtPhone.getText()+"'");
+     document.put("adress","'"+txtAdress.getText()+"'");
+     document.put("description","'"+txtDescription.getText()+"'");
+     document.put("birthDate","'"+jdcBirthDate.getDate()+"'");
+     document.put("gender","'"+cmbGender.getSelectedItem()+"'");
+     table.findAndRemove(document);
+    }//GEN-LAST:event_DeleteActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -397,6 +417,7 @@ public class FrmCostumer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BuyDate;
+    private javax.swing.JButton Delete;
     private javax.swing.JButton Show;
     private javax.swing.JButton add;
     private javax.swing.JComboBox<String> cmbGender;
