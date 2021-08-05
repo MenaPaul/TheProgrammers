@@ -76,40 +76,11 @@ public class SystemDisplay {
                     case 1:
                       
                         break;
-                    case 2:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();       
-                        float total;
-                        total= Functions.computeIva(price);
-                        System.out.println("total "+total);
-                        break;
-                    case 3:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();       
-                        total= Functions.computeTotalprice(price);
-                        System.out.println("total "+total);
-                        break;
-                    case 4:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();
-                        System.out.println("Enter the discount");
-                        seasonDiscount=sn.nextFloat();
-                        total= Functions.computeSeasonDiscount(price,seasonDiscount);                          
-                        System.out.println("total "+total);                         
-                        break;
                     case 5:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();
-                        System.out.println("Enter the discount");
-                        seasonDiscount=sn.nextFloat();
-                        total= Functions.computeTotalPriceWithSeasonDiscount(price, seasonDiscount);
-                        System.out.println("total "+total);    
+                        
                         break;
                     case 6:
-                        System.out.println("Enter the price");
-                        price = sn.nextFloat();
-                        total= Functions.computeDiscountUsed(price);
-                        System.out.println("total employee discount "+total);
+                       
                         break;
                     case 7:
                         break;
