@@ -10,6 +10,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,22 +20,23 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author pc
  */
-public class FrmCostumerData extends javax.swing.JFrame {
+public class FrmInventoryData extends javax.swing.JFrame {
     DB db;
     DBCollection table;
     DBCursor cursor = null;
+    
     /**
-     * Creates new form FrmCostumerData
+     * Creates new form FrmInventoryData
      */
-    public FrmCostumerData() {
-         try {
-            Mongo mongo = new Mongo("localhost",27017);
+    public FrmInventoryData() {
+        
+           try {
+            Mongo mongo = new MongoClient("localhost", 27017);
             db=mongo.getDB("GroceryStore");
-            table=db.getCollection("CostumerData");
+            table=db.getCollection("InventoryData");
         } catch (UnknownHostException ex) {
             Logger.getLogger(FrmCostumer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         initComponents();
     }
 
@@ -47,28 +49,26 @@ public class FrmCostumerData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        DataView = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         Show = new javax.swing.JButton();
         Return = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("DATOS DE LOS CLIENTES");
-
-        DataView.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre ", "Email", "Telefono", "Direccion", "Id", "Descripcion", "Fecha de nacimiento", "Genero"
+                "Tipo", "Id", "Descripción", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(DataView);
+        jScrollPane1.setViewportView(jTable1);
 
         Show.setText("Vizualizar");
         Show.addActionListener(new java.awt.event.ActionListener() {
@@ -84,71 +84,67 @@ public class FrmCostumerData extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("DATOS DEL INVENTARIO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(Show)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 812, Short.MAX_VALUE)
-                .addComponent(Return)
-                .addGap(79, 79, 79))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jLabel1))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1046, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(59, 59, 59)
+                        .addComponent(Show)
+                        .addGap(91, 91, 91)
+                        .addComponent(Return))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jLabel1)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Show)
                     .addComponent(Return))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
-        FrmCostumer frmCostumer = new FrmCostumer();
-        frmCostumer.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ReturnActionPerformed
-
     private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
-       table=db.getCollection("CostumerData");
+       table =db.getCollection("InventoryData");
        cursor = table.find();
        
-       String[] columnNames = {"Nombre","Email","Telefono","Direccion","Id", "Descripcion", "Fecha de nacimiento","Genero"};
+       String[] columnNames = {"Tipo","Id","Descripción","Precio"};
        DefaultTableModel model = new DefaultTableModel(columnNames,0);
        
        while(cursor.hasNext()){
            DBObject obj = cursor.next();
-           String nombre = (String)obj.get("name");
-           String email= (String)obj.get("email");
-           String telefono = (String)obj.get("phone");
-           String direccion=(String)obj.get("adress");
-           String id = (String)obj.get("id");
-           String descripcion =(String)obj.get("description");
-           String genero  =(String)obj.get("gender");
-           String FechaDeNacimiento =(String) obj.get("birthDate");
+           String tipo = (String)obj.get("type");
+           String id= (String)obj.get("id");
+           String descripcion = (String)obj.get("description");
+           String precio  = (String)obj.get("price");
            
-           model.addRow(new Object[] {nombre,email,telefono,direccion,id, descripcion, FechaDeNacimiento, genero });
+           model.addRow(new Object[] {tipo,id,descripcion,precio});
        }
-       DataView.setModel(model);
+       jTable1.setModel(model);
     }//GEN-LAST:event_ShowActionPerformed
+
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+          FrmInventory frmInventory = new FrmInventory();
+        frmInventory.setVisible(true);
+    }//GEN-LAST:event_ReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,29 +163,29 @@ public class FrmCostumerData extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmCostumerData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmInventoryData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmCostumerData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmInventoryData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmCostumerData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmInventoryData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmCostumerData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmInventoryData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmCostumerData().setVisible(true);
+                new FrmInventoryData().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable DataView;
     private javax.swing.JButton Return;
     private javax.swing.JButton Show;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

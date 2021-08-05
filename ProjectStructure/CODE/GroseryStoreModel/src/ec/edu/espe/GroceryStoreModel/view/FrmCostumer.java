@@ -30,7 +30,7 @@ public class FrmCostumer extends javax.swing.JFrame {
         
            try {
             Mongo mongo = new MongoClient("localhost", 27017);
-            db=mongo.getDB("t");
+            db=mongo.getDB("GroceryStore");
             table=db.getCollection("CostumerData");
         } catch (UnknownHostException ex) {
             Logger.getLogger(FrmCostumer.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,7 +71,7 @@ public class FrmCostumer extends javax.swing.JFrame {
         jdcBirthDate = new com.toedter.calendar.JCalendar();
         cmbGender = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Return = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         Delete = new javax.swing.JButton();
 
@@ -142,7 +142,7 @@ public class FrmCostumer extends javax.swing.JFrame {
             }
         });
 
-        Show.setText("Show");
+        Show.setText("Mostrar");
         Show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ShowActionPerformed(evt);
@@ -158,14 +158,14 @@ public class FrmCostumer extends javax.swing.JFrame {
 
         jLabel7.setText("genero:");
 
-        jButton1.setText("Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Return.setText("Regresar");
+        Return.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ReturnActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("Cliente");
+        jLabel8.setText("CLIENTE");
         jLabel8.setPreferredSize(new java.awt.Dimension(39, 19));
 
         Delete.setText("Borrar");
@@ -213,15 +213,15 @@ public class FrmCostumer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BuyDate)
                     .addComponent(jLabel7)
-                    .addComponent(jButton1))
+                    .addComponent(Return))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jdcBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(381, 381, 381)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -266,7 +266,7 @@ public class FrmCostumer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Show)
                     .addComponent(add)
-                    .addComponent(jButton1)
+                    .addComponent(Return)
                     .addComponent(Delete))
                 .addGap(51, 51, 51))
         );
@@ -279,8 +279,9 @@ public class FrmCostumer extends javax.swing.JFrame {
       BasicDBObject  document = new BasicDBObject();
      document.put("name","'" + txtName.getText()+ "'");
      document.put("email","'"+txtEmail.getText()+"'");
-     document.put("phoneNumber","'"+txtPhone.getText()+"'");
+     document.put("phone","'"+txtPhone.getText()+"'");
      document.put("adress","'"+txtAdress.getText()+"'");
+     document.put("id","'"+txtId.getText()+"'");
      document.put("description","'"+txtDescription.getText()+"'");
      document.put("birthDate","'"+jdcBirthDate.getDate()+"'");
      document.put("gender","'"+cmbGender.getSelectedItem()+"'");
@@ -322,7 +323,7 @@ public class FrmCostumer extends javax.swing.JFrame {
     private void txtAdressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAdressFocusLost
       String adress = txtAdress.getText();
     boolean isCharacter;
-    isCharacter = InputValidation.validateCharacters(adress);
+    isCharacter = InputValidation.validateEmail(adress);
     if(!(isCharacter)){
         JOptionPane.showMessageDialog(rootPane, "Enter only characters here");
         txtAdress.requestFocus();
@@ -363,16 +364,18 @@ public class FrmCostumer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbGenderActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+          MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+    }//GEN-LAST:event_ReturnActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
          BasicDBObject  document = new BasicDBObject();
      document.put("name","'" + txtName.getText()+ "'");
      document.put("email","'"+txtEmail.getText()+"'");
-     document.put("phoneNumber","'"+txtPhone.getText()+"'");
+     document.put("phone","'"+txtPhone.getText()+"'");
      document.put("adress","'"+txtAdress.getText()+"'");
+     document.put("id","'"+txtId.getText()+"'");
      document.put("description","'"+txtDescription.getText()+"'");
      document.put("birthDate","'"+jdcBirthDate.getDate()+"'");
      document.put("gender","'"+cmbGender.getSelectedItem()+"'");
@@ -418,10 +421,10 @@ public class FrmCostumer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BuyDate;
     private javax.swing.JButton Delete;
+    private javax.swing.JButton Return;
     private javax.swing.JButton Show;
     private javax.swing.JButton add;
     private javax.swing.JComboBox<String> cmbGender;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
