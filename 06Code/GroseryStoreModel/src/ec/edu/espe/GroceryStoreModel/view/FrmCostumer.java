@@ -6,10 +6,13 @@
 package ec.edu.espe.GroceryStoreModel.view;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.ConnectionString;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClients;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,13 +31,9 @@ public class FrmCostumer extends javax.swing.JFrame {
      */
     public FrmCostumer() {
         
-           try {
-            Mongo mongo = new MongoClient("localhost", 27017);
-            db=mongo.getDB("GroceryStore");
-            table=db.getCollection("CostumerData");
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(FrmCostumer.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Mongo mongo = new MongoClient("localhost", 27017);
+        db=mongo.getDB("GroceryStore");
+        table=db.getCollection("CostumerData");
         
         initComponents();
     }
@@ -443,4 +442,6 @@ public class FrmCostumer extends javax.swing.JFrame {
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhone;
     // End of variables declaration//GEN-END:variables
+
+   
 }
