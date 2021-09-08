@@ -9,23 +9,24 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
-import static ec.edu.espe.groceryStore.view.FrmAdd.createConection;
+import org.bson.Document;
+import utils.ProductsConnection;
+
 
 /**
  *
  * @author pc
  */
-public class FrmDelete extends javax.swing.JFrame {
+public class FrmDeleteProduct extends javax.swing.JFrame {
 
     public void delete(){
-       BasicDBObject  document = new BasicDBObject();
-       MongoClient conection = createConection();
-       DB db = conection.getDB("GroceryStore");
-       DBCollection collection = db.getCollection("Products");
-       document.put("Price", txtPrice.getText());
-       document.put("Type",txtType.getText());
-       document.put("Description", txtDescription.getText());
-       collection.findAndRemove(document);
+       Document  dc = new Document();
+       ProductsConnection productsConnection = new ProductsConnection();
+       
+       dc.put("Price", txtPrice.getText());
+       dc.put("Type",txtType.getText());
+       dc.put("Description", txtDescription.getText());
+       productsConnection.getCollection().findOneAndDelete(dc);
     }
     public void cancel(){
         GroceryStore groceryStore = new GroceryStore();
@@ -34,7 +35,7 @@ public class FrmDelete extends javax.swing.JFrame {
     /**
      * Creates new form FrmDelete
      */
-    public FrmDelete() {
+    public FrmDeleteProduct() {
         initComponents();
         delete();
         cancel();
@@ -187,20 +188,21 @@ public class FrmDelete extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDeleteProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDeleteProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDeleteProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDeleteProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmDelete().setVisible(true);
+                new FrmDeleteProduct().setVisible(true);
             }
         });
     }

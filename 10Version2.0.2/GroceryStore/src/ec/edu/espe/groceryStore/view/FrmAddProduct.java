@@ -12,36 +12,23 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import utils.ProductsConnection;
 
 /**
  *
  * @author pc
  */
-public class FrmAdd extends javax.swing.JFrame {
+public class FrmAddProduct extends javax.swing.JFrame {
     
-       public static MongoClient createConection() {
-        String cluster;
-        MongoClientURI uri;
-        MongoClient mongoClient;
-        MongoDatabase database;
-        MongoCollection collection;
-
-        cluster = "mongodb+srv://eduardo:gutenmorgen@cluster0.gngrt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-        uri = new MongoClientURI(cluster);
-        mongoClient = new MongoClient(uri);
-        database = mongoClient.getDatabase("GroceryStore");
-        collection = database.getCollection("Products");
-        return mongoClient;
-    }
+     
        public void add(){
-       BasicDBObject  document = new BasicDBObject();
-       MongoClient conection = createConection();
-       DB db = conection.getDB("GroceryStore");
-       DBCollection collection = db.getCollection("Products");
-       document.put("Price", txtPrice.getText());
-       document.put("Type",txtType.getText());
-       document.put("Description", txtDescription.getText());
-       collection.insert(document);
+       Document  dc = new Document();
+       ProductsConnection productsConnection= new ProductsConnection();
+       dc.put("Price", txtPrice.getText());
+       dc.put("Type",txtType.getText());
+       dc.put("Description", txtDescription.getText());
+       productsConnection.getCollection().insertOne(dc);
        }
        public void cancel(){
             GroceryStore groceryStore = new GroceryStore();
@@ -52,9 +39,8 @@ public class FrmAdd extends javax.swing.JFrame {
      * 
      * Creates new form FrmAdd
      */
-    public FrmAdd() {
+    public FrmAddProduct() {
         initComponents();
-        createConection();
         add();
         cancel();
      
@@ -219,20 +205,21 @@ public class FrmAdd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAddProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmAdd().setVisible(true);
+                new FrmAddProduct().setVisible(true);
             }
         });
     }
